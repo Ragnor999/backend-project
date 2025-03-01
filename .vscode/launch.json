@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/${input:programPath}",
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    }
+  ],
+  "inputs": [
+    {
+      "type": "pickString",
+      "id": "programPath",
+      "description": "Select the program to launch",
+      "options": [
+        "app.js"
+      ]
+    }
+  ],
+"scripts": {
+  "test": "NODE_OPTIONS='--max-old-space-size=2048' jest",
+  "build": "webpack-cli --config ./webpack.config.js",
+  "count-words": "echo \"$@\" | wc -w"
+},
+}
